@@ -70,5 +70,5 @@ resource "aws_iam_role_policy_attachment" "imbillingrole-readonlyaccess" {
 resource "aws_iam_role_policy_attachment" "imbillingrole-savingplansfullaccess" {
   count      = var.create_ingrammicro_role == true ? 1 : 0
   role       = aws_iam_role.imbillingrole[0].name
-  policy_arn = "arn:aws:iam::aws:policy/SavingPlansFullAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AWSSavingsPlansFullAccess"
 }
