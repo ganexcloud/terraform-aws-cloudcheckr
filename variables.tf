@@ -29,8 +29,8 @@ variable "create_ingrammicro_role" {
 
 variable "ingrammicro_payer_account" {
   description = "(Optional) IngramMicro payer account id"
-  type        = string
-  default     = null
+  type        = number
+  default     = 111111111111
 }
 
 variable "create_cur_report" {
