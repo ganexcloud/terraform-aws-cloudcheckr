@@ -45,7 +45,7 @@ resource "aws_iam_role" "imbillingrole" {
   count              = var.create_ingrammicro_role == true ? 1 : 0
   name               = "IMBillingRole"
   description        = "Cross Account Billing Access from IM Payer"
-  assume_role_policy = data.aws_iam_policy_document.imbillingrole.json
+  assume_role_policy = data.aws_iam_policy_document.imbillingrole[0].json
   tags               = var.tags
 }
 
