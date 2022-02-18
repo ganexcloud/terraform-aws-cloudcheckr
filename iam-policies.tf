@@ -410,6 +410,7 @@ EOF
 }
 
 data "aws_iam_policy_document" "imbillingrole" {
+  count = var.create_cloudcheckr_role == true ? 1 : 0
   statement {
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
