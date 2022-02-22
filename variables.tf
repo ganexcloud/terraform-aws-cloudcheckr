@@ -52,7 +52,7 @@ variable "cur_report_bucket_name" {
 }
 
 variable "tags" {
-  description = "A map of tags to add to resources"
+  description = "(Optional) A map of tags to add to resources"
   type        = map(string)
   default     = {}
 }
