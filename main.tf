@@ -76,6 +76,7 @@ resource "aws_iam_policy" "cloudwatchflowlogs" {
   name        = "CloudCheckr-CloudWatchFlowLogs"
   path        = "/"
   description = "CloudCheckr-CloudWatchFlowLogs"
+  tags        = var.tags
   policy      = <<EOF
 {
   "Version": "2012-10-17",
@@ -103,6 +104,7 @@ resource "aws_iam_policy" "security" {
   name        = "CloudCheckr-Security"
   path        = "/"
   description = "CloudCheckr-Security"
+  tags        = var.tags
   policy      = <<EOF
 {
   "Version": "2012-10-17",
@@ -159,11 +161,11 @@ EOF
 
 # CloudCheckr-Inventory
 resource "aws_iam_policy" "inventory" {
-  count = var.create_cloudcheckr_role == true ? 1 : 0
-
+  count       = var.create_cloudcheckr_role == true ? 1 : 0
   name        = "CloudCheckr-Inventory"
   path        = "/"
   description = "CloudCheckr-Inventory"
+  tags        = var.tags
   policy      = <<EOF
 {
   "Version": "2012-10-17",
@@ -354,6 +356,7 @@ resource "aws_iam_policy" "cur" {
   name        = "CloudCheckr-CUR"
   path        = "/"
   description = "CloudCheckr-CUR"
+  tags        = var.tags
   policy      = <<EOF
 {
   "Version": "2012-10-17",
@@ -380,6 +383,7 @@ resource "aws_iam_policy" "cost" {
   name        = "CloudCheckr-Cost"
   path        = "/"
   description = "CloudCheckr-Cost"
+  tags        = var.tags
   policy      = <<EOF
 {
   "Version": "2012-10-17",
@@ -449,6 +453,7 @@ resource "aws_iam_policy" "immasterbilling" {
   name        = "IMMasterBilling"
   path        = "/"
   description = "Policy for IM Billing Access"
+  tags        = var.tags
   policy      = <<EOF
 {
   "Version": "2012-10-17",
